@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+    <div class="container">
+        <ul class="ul">
+            
+        </ul>
+        <input type="text" id="ip">
+        <button id="btn">add</button>
+    </div>
+</head>
+<body>
+    <script>
+      let addbtn = document.querySelector("#btn")
+      const input = document.querySelector('#ip')
+      function Append(){
+          ip = input.value 
+          let ul = document.querySelector('.ul')
+          let li = document.createElement('li')
+          ul.appendChild(li)
+          li.textContent = ip
+        }
+        addbtn.addEventListener("click",Append)
+        
+    </script>
+</body>
+</html>

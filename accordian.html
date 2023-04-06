@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/9823b7aa37.js" crossorigin="anonymous"></script>
+</head>
+<style>
+body{
+    font-family: Verdana, Geneva, Tahoma, sans active-serif;
+    line-height: 1.6rem;
+    padding: 40px;
+    background-color: rgb(255,215,255);
+}
+.accordian{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: flex-start;
+    margin: 40px 40px;
+    background-color: white; 
+    width: 50vw;
+    padding: 23px 23px;
+}
+.ques{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40vw;
+    cursor: pointer;
+}
+.ans{
+    max-height: 0;
+    overflow: hidden;
+}
+/* .ans.active{
+    max-height: fit-content;
+}*/
+.icon{
+    transition: transform 0.2s;
+}
+.icon.active{
+    transform: rotate(-180deg);
+} 
+h2{
+    margin-left: 40px;
+}
+</style>
+<body>
+    <h2>FAQ'S</h2>
+    <div class="accordian">
+        <div class="ques">
+            <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+            <i class="icon active fa-sharp fa-solid fa-caret-down fa-lg"></i>
+        </div>
+        <div class="ans active">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio, doloremque nam obcaecati voluptatum eius incidunt nostrum accusantium, neque provident necessitatibus totam officiis magni vel ad aspernatur? Maxime asperiores minima, nobis incidunt iusto saepe mollitia consequatur?</div>
+    </div>
+    <div class="accordian">
+        <div class="ques">
+            <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+            <i class="icon fa-sharp fa-solid fa-caret-down fa-lg"></i>
+        </div>
+        <div class="ans">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio, doloremque nam obcaecati voluptatum eius incidunt nostrum accusantium, neque provident necessitatibus totam officiis magni vel ad aspernatur? Maxime asperiores minima, nobis incidunt iusto saepe mollitia consequatur?</div>
+    </div>
+    <div class="accordian">
+        <div class="ques">
+            <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+            <i class="icon fa-sharp fa-solid fa-caret-down fa-lg"></i>
+        </div>
+        <div class="ans">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio, doloremque nam obcaecati voluptatum eius incidunt nostrum accusantium, neque provident necessitatibus totam officiis magni vel ad aspernatur? Maxime asperiores minima, nobis incidunt iusto saepe mollitia consequatur?</div>
+    </div>
+    <div class="accordian">
+        <div class="ques">
+            <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+            <i class="icon fa-sharp fa-solid fa-caret-down fa-lg"></i>
+        </div>
+        <div class="ans">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio, doloremque nam obcaecati voluptatum eius incidunt nostrum accusantium, neque provident necessitatibus totam officiis magni vel ad aspernatur? Maxime asperiores minima, nobis incidunt iusto saepe mollitia consequatur?</div>
+    </div>
+    <script>
+       const accordian = document.querySelectorAll('.accordian')
+       accordian.forEach(accordians=>{
+        const ans  = accordians.querySelector('.ans ')
+        const icon = accordians.querySelector('.icon')
+        accordians.addEventListener('click',()=>{
+           if(icon.classList.contains('active')){
+            icon.classList.remove('active')
+            ans.style.maxHeight = null;
+           }
+           else {
+            icon.classList.add('active')
+            ans.style.maxHeight = ans.scrollHeight + 'px'
+           }
+        })
+       })
+    </script>
+</body>
+
+</html>

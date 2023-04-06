@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .p.active{
+        color: black;
+    }
+    p{
+        color: green;
+        font-size: large;
+    }
+</style>
+<body>
+     <div id="para">
+        <p class="p active">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas iure numquam veritatis eaque velit, ducimus omnis sint sapiente unde est officia porro. Modi odio mollitia fugiat iure illum voluptatem doloremque quis alias nostrum minima aut saepe quibusdam debitis aperiam officiis itaque recusandae ratione, dolor adipisci?
+        </p>
+     </div>   
+     <script>
+        const para = document.querySelectorAll('#para')
+        para.forEach(e=>{
+          let p = e.querySelector('.p')
+          e.addEventListener('mouseout',()=>{
+            if(p.classList.contains('active')){
+                p.classList.remove('active')
+            }
+            else{
+                p.classList.add('active')
+            }
+          })
+        })
+     </script>
+</body>
+</html>

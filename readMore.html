@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .para{
+            max-height: 0;
+            overflow: hidden;
+        }
+        .para.active{
+            max-height: fit-content;
+        }
+        .btn{
+            margin-top: 0;
+        }
+        .btn.active{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="para active">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab id alias nihil perferendis eius quisquam quae sint nesciunt reiciendis provident libero soluta expedita, veritatis iure? Magnam enim natus quo molestiae recusandae nostrum consequatur quia.</div>
+    <button class="btn active">readMore</button>
+    </div>
+    <script>
+        const container = document.querySelectorAll('.container')
+        container.forEach(a=>{
+            const btn = a.querySelector('.btn')
+            const para = a.querySelector('.para')
+            a.addEventListener('click',()=>{
+               btn.classList.toggle('active')
+               para.classList.toggle('active')
+            })
+        })
+    </script>
+</body>
+</html>
